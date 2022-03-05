@@ -1,3 +1,7 @@
+/**
+ *
+ * @author LeoSolis
+ */
 
 package com.tienda.entity;
 
@@ -10,10 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-/**
- *
- * @author LeoSolis
- */
+
 @Entity
 @Table (name="personas")
 
@@ -22,6 +23,7 @@ public class Persona implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     
     private long id;
+    private String nombre;
     private String apellido1;
     private String apellido2;
     private String telefono;
@@ -31,6 +33,15 @@ public class Persona implements Serializable {
     @JoinColumn(name="paises_id")
     private Pais pais;
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    
     public long getId() {
         return id;
     }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- Esto es un formulario-->
+        <div class = "container">
+            <form th:object = "${persona}"
+                  th:action="@{/save}"
+                  method="POST"
+                  >
+                <div class="form-group-row">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" th:field="*{nombre}" placeholder= "Nombre Cliente" id="nombre" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group-row">
+                    <label for="nombre">Apellido 1</label>
+                    <input type="text" th:field="*{apellido1}" placeholder= "Apellido 1" id="apellido1" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group-row">
+                    <label for="nombre">Apellido 2</label>
+                    <input type="text" th:field="*{apellido2}" placeholder= "Apellido 2" id="apellido2" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group-row">
+                    <label for="nombre">email</label>
+                    <input type="text" th:field="*{email}" placeholder= "Email" id="email" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group-row">
+                    <label for="nombre">Telefono</label>
+                    <input type="text" th:field="*{telefono}" placeholder= "Telefono" id="telefono" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group-row">
+                    <label for="nombre">Pais</label>
+                    <input type="text" th:field="*{pais}" placeholder= "Pais" id="pais" aria-describedby="emailHelp">
+                </div>
+                <button type="submit" value="Guardar">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>
