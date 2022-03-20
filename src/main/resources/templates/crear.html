@@ -3,18 +3,21 @@
 
 -->
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head th:replace="plantilla/template::head"> <!-- comment -->        
     </head>
+    <title>Nueva persona</title>
     <body>
+    <header th:replace="plantilla/template.html::header"></header> <!-- comment-->
+        
         <!-- Esto es un formulario-->
         <div class = "container">
             <form th:object = "${persona}"
                   th:action="@{/save}"
-                  method="POST"
-                  >
+                  method="POST">
+                <!--  th:replace="plantilla/template::form_crear"-->             
+                
+                <input type="hidden" th:field="*{id}">
+                
                 <div class="form-group-row">
                     <label for="nombre">Nombre</label>
                     <input type="text" th:field="*{nombre}" placeholder= "Nombre Cliente" id="nombre" aria-describedby="emailHelp">
@@ -37,10 +40,18 @@
                 </div>
                 <div class="form-group-row">
                     <label for="nombre">Pais</label>
-                    <input type="text" th:field="*{pais}" placeholder= "Pais" id="pais" aria-describedby="emailHelp">
+                    <select th:field="*{pais}" class="form-control form-control-sm col-md-6" id="pais" aria-describedby="emailHelp">
+                        <option th:each="x:${paises}"
+                                th:value="${x.id}"
+                                th:text="${x.pais}"/>
+                    </select>
                 </div>
                 <button type="submit" value="Guardar">Submit</button>
             </form>
         </div>
+    
+        <!-- Footer -->
+     <footer th:replace="plantilla/template::footer"></footer> <!--    -->
+        
     </body>
 </html>

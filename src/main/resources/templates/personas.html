@@ -6,22 +6,23 @@ S04
 
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head th:replace="plantilla/template::head">        
     </head>
+    <title>Lista Personas</title>
     <body>
         <h1 th:text="${titulo}"></h1>
-        <table>
-            <thead class=""thead-dark>
+        
+        <table class="table table-success table-striped">
+            
+            <thead class="thead-dark">
                 <tr>
                     <th scope="col">Nombre </th>
                     <th scope="col">Apellido 1 </th>
                     <th scope="col">Apellido 2 </th>
                     <th scope="col">Email </th>
                     <th scope="col">Telefono </th>
-                    <th scope="col">Pais </th>
+<!-- comment-->     <th scope="col">Pais </th> 
+                    <th scope="col">Editar </th>
                     <th scope="col">Eliminar </th>
                 </tr>                
             </thead>
@@ -34,8 +35,11 @@ S04
                         <td th:text="${user.getApellido2}"></td>
                         <td th:text="${user.getEmail}"></td>
                         <td th:text="${user.getTelefono}"></td>      
-                        <td th:text="${user.getPais}"></td> 
-                        <td>
+<!-- comment -->        <td th:text="${user.getPais.getPais}"></td>
+                        <td> <!-- EDITAR --> 
+                            <a th:href="@{/editPersona/{id} (id=${user.getId})}">Edit</a>
+                        </td>
+                        <td> <!-- ELIMINAR --> 
                             <a th:href="@{/delete/{id} (id=${user.getId})}">Delete</a>
                         </td>
                     </tr>

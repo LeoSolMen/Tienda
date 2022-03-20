@@ -1,6 +1,9 @@
 /**
  *
  * @author LeoSolis
+ * clase Service para Persona
+ * Proyecto tienda
+ * I Q 2022
  */
 
 package com.tienda.service;

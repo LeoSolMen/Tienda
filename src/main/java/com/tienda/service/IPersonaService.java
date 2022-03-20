@@ -1,6 +1,9 @@
 /**
  *
  * @author LeoSolis
+ * Interface Service para Persona
+ * Proyecto tienda
+ * I Q 2022
  */
 
 package com.tienda.service;
@@ -9,7 +12,7 @@ import com.tienda.entity.Persona;
 import java.util.List;
 import org.springframework.stereotype.Repository;
 
-@Repository
+//@Repository
 public interface IPersonaService {
     public List<Persona> getAllPerson();
     public void savePerson(Persona persona);

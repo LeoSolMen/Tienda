@@ -1,6 +1,5 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+Proyecto tienda
  */
 package com.tienda.controller;
 
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 /**
  *
  * @author LeoSolis
- */
+*/
 
 @Controller
 public class LoginController {
@@ -19,4 +18,4 @@ public class LoginController {
     {
         return "login";
     }
-}
+} 
