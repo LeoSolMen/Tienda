@@ -1,4 +1,3 @@
-
 <!--
 Template del proyecto tienda
 Leonel Solis
@@ -76,9 +75,10 @@ into the html tag xmlns="http://www.w3.org/1999/xhtml"
 
         <!-- Footer -->
         <footer th:fragment="footer" class="text-center text-white fixed-bottom" style="background-color: #0a4275;">
-            <div>
-                <p>Copyright Leonel Solis &copy; IQ 2022</p>
-            </div>              
+                <p>Leonel Solis &COPY [[#{plantilla.derechos}]]
+                    <a th:ref="@{/(lang=es)}">ES</a>
+                    <a th:ref="@{/(lang=en)}">EN</a>
+                </p>       
         </footer>
 
     </body>

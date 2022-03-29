@@ -10,20 +10,22 @@ S04
     </head>
     <title>Lista Personas</title>
     <body>
-        <h1 th:text="${titulo}"></h1>
+        <header th:replace="plantilla/template::header"></header>
+        <h1 th:text="#{plantilla.clientes}">XXX</h1>
+        <h1 th:text="#{cliente.datos}">XXX</h1>
         
         <table class="table table-success table-striped">
             
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">Nombre </th>
-                    <th scope="col">Apellido 1 </th>
-                    <th scope="col">Apellido 2 </th>
-                    <th scope="col">Email </th>
-                    <th scope="col">Telefono </th>
-<!-- comment-->     <th scope="col">Pais </th> 
-                    <th scope="col">Editar </th>
-                    <th scope="col">Eliminar </th>
+                    <th scope="col" th:text="#{cliente.nombre}">Nombre </th>
+                    <th scope="col" th:text="#{cliente.apellidos}">Apellido 1 </th>
+                    <th scope="col" th:text="#{cliente.apellidos}">Apellido 2 </th>
+                    <th scope="col" th:text="#{cliente.nombre}">Correo </th>
+                    <th scope="col" th:text="#{cliente.telefono}">Telefono </th>
+<!-- comment-->     <th scope="col" th:text="#{cliente.nombre}">Pais </th> 
+                    <th scope="col" th:text="#{accion.editar}">Editar </th>
+                    <th scope="col" th:text="#{accion.eliminar}">Eliminar </th>
                 </tr>                
             </thead>
             
@@ -47,4 +49,6 @@ S04
             </tbody>            
         </table>
     </body>
+    <!-- Footer -->
+     <footer th:replace="plantilla/template::footer"></footer> <!--    -->
 </html>
