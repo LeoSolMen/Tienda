@@ -23,8 +23,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService implements UserDetailsService{
     
-    @Autowired IPersonaService personaService;
-    
+    @Autowired 
+    public IPersonaService personaService;
+/**    
     @Override
     public UserDetails loadUserByUsername (String username) throws UsernameNotFoundException{
         Persona p = personaService.findByNombre(username);
@@ -33,4 +34,12 @@ public class UserService implements UserDetailsService{
         UserDetails userDet = new User(p.getNombre(), p.getApellido1(), roles);
         return userDet;
     }
+**/ 
+    
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        Persona persona = this.personaService.findByNombre(username);
+        Userprincipal userPrincipal = new Userprincipal(persona);
+        return userPrincipal;
+}
 }
